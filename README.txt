@@ -16,6 +16,8 @@ Hosted on Cybrancee, Domain from GoDaddy, SSL from cheapssl.
 
 when the code is pushed, this code automatically deployed into Server - cybrancee.
 
+--> Make GIT Repo to public to deploy the changes on server
+
 Thanks
 Saiteja Enimidigandla
 saitejae.com
