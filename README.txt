@@ -1,3 +1,4 @@
+Last updated date: October 20 2023
 Directory Structure
 -------------------
 css\              - Stylesheets CSS files for the template.
