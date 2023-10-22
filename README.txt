@@ -14,4 +14,6 @@ This is personal website of Saiteja Enimidigandla. This is active at saitejae.co
 
 Hosted on Cybrancee, Domain from GoDaddy, SSL from cheapssl. 
 
+when the code is pushed, this code automatically deployed into Server - cybrancee.
+
 Thanks
