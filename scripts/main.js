@@ -8,6 +8,10 @@ $(document).ready(function() {
   }); // initialize animate on scroll library
 });
 
+$('.carousel').carousel({
+  interval: 1500
+})
+
 // Smooth scroll for links with hashes
 $('a.smooth-scroll')
 .click(function(event) {
