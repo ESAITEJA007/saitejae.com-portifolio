@@ -1,4 +1,4 @@
-Last updated date: October 20 2023
+Last updated date: August 09 2026
 Directory Structure
 -------------------
 css\              - Stylesheets CSS files for the template.
@@ -12,11 +12,7 @@ LICENSE-*.txt     - License file as per your downloaded variant.
 
 This is personal website of Saiteja Enimidigandla. This is active at saitejae.com (Secured Site)
 
-Hosted on Cybrancee, Domain from GoDaddy, SSL from cheapssl. 
-
-when the code is pushed, this code automatically deployed into Server - cybrancee.
-
---> Make GIT Repo to public to deploy the changes on server
+Domain purchased from Cloudflare. Hosted and deployed on Cloudflare Workers.
 
 Thanks
 Saiteja Enimidigandla

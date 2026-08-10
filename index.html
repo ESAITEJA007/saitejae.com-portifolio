@@ -10,7 +10,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
   <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
-  <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+  <link href="css/main.css?ver=1.2.1" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,800&display=swap" rel="stylesheet">
   <link rel="icon" href="images/s_icon.ico">
   <noscript>
@@ -28,7 +28,7 @@
     <div class="profile-page sidebar-collapse">
       <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
         <div class="container">
-          <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip"><b>My Resume</b></a>
+          <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip"><b>My Portfolio</b></a>
             <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
               aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span
@@ -54,17 +54,18 @@
       <div class="profile-page">
         <div class="wrapper">
           <div class="page-header page-header-small" filter-color="green">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('images/bg_image4.jpg')">
+            <div class="page-header-image" style="background-image: url('images/bg_image4.jpg')">
             </div>
             <div class="container">
               <div class="content-center">
                 <div class="cc-profile-image"><a href="#"><img src="images/anthony.jpg" alt="Image" /></a></div>
                 <div class="h2 title" id="rainbow-text">Saiteja</div>
                 <p class="category text-white">Full Stack Java Developer<br></p><a
-                  class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in"
-                  data-aos-anchor="data-aos-anchor" id="hire_me"><b>Contact Me</b></a><a class="btn btn-primary"
-                  href="https://saiteja-portfolio.s3.amazonaws.com/Saiteja_Resume.pdf"
-                  target=”_blank” data-aos="zoom-in" data-aos-anchor="data-aos-anchor" id="down_cv"><b>View My
+                  class="btn btn-primary btn-hero smooth-scroll mr-2" href="#contact" data-aos="zoom-in"
+                  data-aos-anchor="data-aos-anchor" id="hire_me"><b>Contact Me</b></a><a
+                  class="btn btn-primary btn-hero"
+                  href="https://www.linkedin.com/in/saiteja-e-99b99926a/"
+                  target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" id="down_cv"><b>View My
                     CV</b></a>
               </div>
             </div>
@@ -135,7 +136,13 @@
 
       <div class="section" id="experience">
         <div class="container cc-experience">
-          <div class="h4 text-center mb-4 title">Work Experience</div>
+          <div class="cc-exp-heading-row mb-4">
+            <div class="h4 title cc-exp-heading">Work Experience</div>
+            <div class="cc-exp-heading-actions">
+              <button type="button" class="cc-exp-toggle-all" id="exp-toggle-all" data-state="collapsed">Expand
+                All</button>
+            </div>
+          </div>
           <div class="card">
             <div class="row">
               <div class="col-md-3 attra_bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
@@ -152,28 +159,34 @@
                     <b>Full Stack Java Developer</b>
                   </div>
                   <p class="category" id="attra"><b>Vanguard</b></p>
-                  <p><br>&rarr;Involved in phases of SDLC such as analysis, design, implementation, and testing through
-                    Agile scrum methodology with 2 weeks Sprint and 4 weeks release cycle.
-                    <br>&rarr; Developed modules using Core Java APIs, Collections, Java 1.8 (Streams), Jordan
-                    API(Dates), Multi-threading, Exception Handling, Generics, Enums, Java I/O and object-oriented
-                    designs patterns.
-                    <br>&rarr;Used Microservice architecture with Spring Boot based services interacting through a
-                    combination of REST and Apache Kafka message brokers.
-                    <br>&rarr;Built the reusable service components using ReactJS Components with Object Oriented
-                    JavaScript, jQuery, HTML, CSS3 based on the visual designs.
-                    <br>&rarr;Used RESTful APIs, Spring boot and pivotal cloud foundry that developed Spring RESTful
-                    Architecture.
-                    <br>&rarr;Mentored the junior developers in critical tasks, explaining to them how to adhere to the
-                    process etc.
-                    <br>&rarr;Active involvement in pre-deployment and post-deployment activities.
-                    <br>&rarr;Used spring and Spring data Hibernate for implementing IOC and ORM for back-end tiers.
-                    <br>&rarr;Implemented OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected
-                    resources.
-                    <br><br><b>Tech Stack: </b>Java/J2EE, JDBC, Spring2.5, Spring Core, Spring AOP, Spring MVC
-                    Framework, Spring Boot, Spring Web Services, Hibernate 3.0, JSP, Servlets, XML, HTML 5, CSS 3,
-                    bootstrap, Junit, Selenium, DAO, Web Logic 9.2, Log4j, Maven2, Oracle11.1, Oracle11.2 (Oracle11g),
-                    PL/SQL, SQL, Eclipse 3.2, Node JS, JSON, IBM WebSphere, MQ Series, AWS, Splunk, Honeycomb.
-                  </p>
+                  <a class="cc-exp-toggle" data-toggle="collapse" href="#exp-1" role="button" aria-expanded="false"
+                    aria-controls="exp-1"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                  <div class="collapse" id="exp-1">
+                    <ul class="cc-exp-list">
+                      <li>Involved in phases of SDLC such as analysis, design, implementation, and testing through
+                        Agile scrum methodology with 2 weeks Sprint and 4 weeks release cycle.</li>
+                      <li>Developed modules using Core Java APIs, Collections, Java 1.8 (Streams), Jordan API(Dates),
+                        Multi-threading, Exception Handling, Generics, Enums, Java I/O and object-oriented designs
+                        patterns.</li>
+                      <li>Used Microservice architecture with Spring Boot based services interacting through a
+                        combination of REST and Apache Kafka message brokers.</li>
+                      <li>Built the reusable service components using ReactJS Components with Object Oriented
+                        JavaScript, jQuery, HTML, CSS3 based on the visual designs.</li>
+                      <li>Used RESTful APIs, Spring boot and pivotal cloud foundry that developed Spring RESTful
+                        Architecture.</li>
+                      <li>Mentored the junior developers in critical tasks, explaining to them how to adhere to the
+                        process etc.</li>
+                      <li>Active involvement in pre-deployment and post-deployment activities.</li>
+                      <li>Used spring and Spring data Hibernate for implementing IOC and ORM for back-end tiers.</li>
+                      <li>Implemented OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected
+                        resources.</li>
+                    </ul>
+                    <p class="cc-exp-tech"><span class="cc-exp-tech-label">Tech Stack</span>Java/J2EE, JDBC, Spring2.5, Spring Core, Spring AOP, Spring MVC
+                      Framework, Spring Boot, Spring Web Services, Hibernate 3.0, JSP, Servlets, XML, HTML 5, CSS 3,
+                      bootstrap, Junit, Selenium, DAO, Web Logic 9.2, Log4j, Maven2, Oracle11.1, Oracle11.2 (Oracle11g),
+                      PL/SQL, SQL, Eclipse 3.2, Node JS, JSON, IBM WebSphere, MQ Series, AWS, Splunk, Honeycomb.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,36 +204,40 @@
 
                   <div class="h5">
                     <img class="btn btn-default btn-round btn-lg btn-icon" src="images/southern.jpg" id="edu_icon">
-                    <b>Full Stack Java Developer</b>
+                    <b>Graduate Assistant</b>
                   </div>
                   <p class="category" id="attra"><b>Southern Arkansas University</b></p>
-                  <p>
-                    <br>&rarr;Developed modules using Core Java APIs, Collections, Java 1.8 (Streams), Jordan
-                    API(Dates), Multi-threading, Exception Handling, Generics, Enums, Java I/O and object-oriented
-                    designs patterns.
-                    <br>&rarr;Used Microservice architecture with Spring Boot based services interacting through a
-                    combination of REST and Apache Kafka message brokers.
-                    <br>&rarr;Built the reusable service components using ReactJS Components with Object Oriented
-                    JavaScript, jQuery, HTML, CSS3 based on the visual designs.
-                    <br>&rarr;Used RESTful APIs, Spring boot and pivotal cloud foundry that developed Spring RESTful
-                    Architecture.
-                    <br>&rarr;Mentored the junior developers in critical tasks, explaining to them how to adhere to the
-                    process etc.
-                    <br>&rarr;Active involvement in pre-deployment and post-deployment activities.
-                    <br>&rarr;Used spring and Spring data Hibernate for implementing IOC and ORM for back-end tiers.
-                    <br>&rarr;Implemented OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected
-                    resources.
-                    <br>&rarr;Used terraform to write Infrastructure as code and created Terraform scripts for EC2
-                    instancesElastic Load balancers and 3 buckets
-                    <br>&rarr;Setup firewalls rules to restrict traffic to and from the VM instances and used GCP CDN to
-                    deliver content from GCP cache locations improving user experience and latency.
-                    <br>&rarr;Developed terraform scripts for cloud watch alerts .
-
-                    <br><br><b>Tech Stack: </b>Java/J2EE, JDBC, Spring2.5, Spring Core, Spring AOP, Spring MVC
-                    Framework, Spring Boot, Spring Web Services, Hibernate 3.0, JSP, Servlets, XML, HTML 5, CSS 3,
-                    bootstrap, Junit, Selenium, DAO, Web Logic 9.2, Log4j, Maven2, Oracle11.1, Oracle11.2 (Oracle11g),
-                    PL/SQL, SQL, Eclipse 3.2, Node JS, JSON, IBM WebSphere, MQ Series.
-                  </p>
+                  <a class="cc-exp-toggle" data-toggle="collapse" href="#exp-2" role="button" aria-expanded="false"
+                    aria-controls="exp-2"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                  <div class="collapse" id="exp-2">
+                    <ul class="cc-exp-list">
+                      <li>Developed modules using Core Java APIs, Collections, Java 1.8 (Streams), Jordan API(Dates),
+                        Multi-threading, Exception Handling, Generics, Enums, Java I/O and object-oriented designs
+                        patterns.</li>
+                      <li>Used Microservice architecture with Spring Boot based services interacting through a
+                        combination of REST and Apache Kafka message brokers.</li>
+                      <li>Built the reusable service components using ReactJS Components with Object Oriented
+                        JavaScript, jQuery, HTML, CSS3 based on the visual designs.</li>
+                      <li>Used RESTful APIs, Spring boot and pivotal cloud foundry that developed Spring RESTful
+                        Architecture.</li>
+                      <li>Mentored the junior developers in critical tasks, explaining to them how to adhere to the
+                        process etc.</li>
+                      <li>Active involvement in pre-deployment and post-deployment activities.</li>
+                      <li>Used spring and Spring data Hibernate for implementing IOC and ORM for back-end tiers.</li>
+                      <li>Implemented OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected
+                        resources.</li>
+                      <li>Used terraform to write Infrastructure as code and created Terraform scripts for EC2
+                        instances, Elastic Load balancers and 3 buckets.</li>
+                      <li>Setup firewalls rules to restrict traffic to and from the VM instances and used GCP CDN to
+                        deliver content from GCP cache locations improving user experience and latency.</li>
+                      <li>Developed terraform scripts for cloud watch alerts.</li>
+                    </ul>
+                    <p class="cc-exp-tech"><span class="cc-exp-tech-label">Tech Stack</span>Java/J2EE, JDBC, Spring2.5, Spring Core, Spring AOP, Spring MVC
+                      Framework, Spring Boot, Spring Web Services, Hibernate 3.0, JSP, Servlets, XML, HTML 5, CSS 3,
+                      bootstrap, Junit, Selenium, DAO, Web Logic 9.2, Log4j, Maven2, Oracle11.1, Oracle11.2 (Oracle11g),
+                      PL/SQL, SQL, Eclipse 3.2, Node JS, JSON, IBM WebSphere, MQ Series.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -241,29 +258,38 @@
                     <b>Full Stack Developer</b>
                   </div>
                   <p class="category" id="attra"><b>Attra Infotech</b></p>
-                  <p>I have 2.5 years of work experience at Attra Infotech Pvt. Ltd. as a Full Stack Engineer in the
-                    banking and retail industry where I have actively participated in the design, development, and
-                    maintenance of credit card applications. My daily tasks involved the development of credit card
-                    processing applications, Unit Testing & Integration, and defect resolution.
-                    <br>&rarr;Involved in Requirements gathering, Analysis, Design, Development and Testing of
-                    application using SAFE AGILE methodology (SCRUM) in a Test-driven Development (TDD) approach.
-                    <br>&rarr;Designed and documented REST/HTTP API's, including JSON data formats and API versioning
-                    strategy.
-                    <br>&rarr;Implemented the project using Web Services, WSDL, UDDI, and SOAP to communicate with other
-                    systems by using Apache Axis and involved in Micro Services development.
-                    <br>&rarr;Designed the front-end applications using web technologies like React JS, Angular 8 and
-                    used Twitter Bootstrap for creating grid layout, responsive screen sizes and devices.
-                    <br>&rarr; Developed business components by using Spring Boot, Spring IOC, Spring AOP, Spring
-                    Annotations, Spring Cloud &Persistence layer by using Hibernate/JPA along with Web Services
-                    (RESTful).
-                    <br>&rarr; Created Typescript reusable components and services to consume REST API's using Component
-                    based architecture provided by angular v10.
-                    <br>&rarr; Implemented Angular Router to enable navigation from one view to the next as agent
-                    performs application tasks.
-                    <br><br><b>Tech Stack:</b> Java, J2EE, Spring Boot, JavaScript, DOJO, DAO, Junit, Log4j, Spring
-                    Integration, Hibernate ORM, TDD, Git, Web Services (SOAP), Linux, Agile, Jenkins, Mockito, Maven,
-                    Servlets, Visual studio, Node js, NoSQL, Express JS, HTML5, AWS, Angular v10.
-                  </p>
+                  <a class="cc-exp-toggle" data-toggle="collapse" href="#exp-3" role="button" aria-expanded="false"
+                    aria-controls="exp-3"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                  <div class="collapse" id="exp-3">
+                    <p class="cc-exp-body">I have 2.5 years of work experience at Attra Infotech Pvt. Ltd. as a Full
+                      Stack Engineer in the banking and retail industry where I have actively participated in the
+                      design, development, and maintenance of credit card applications. My daily tasks involved the
+                      development of credit card processing applications, Unit Testing &amp; Integration, and defect
+                      resolution.
+                    </p>
+                    <ul class="cc-exp-list">
+                      <li>Involved in Requirements gathering, Analysis, Design, Development and Testing of
+                        application using SAFE AGILE methodology (SCRUM) in a Test-driven Development (TDD)
+                        approach.</li>
+                      <li>Designed and documented REST/HTTP API's, including JSON data formats and API versioning
+                        strategy.</li>
+                      <li>Implemented the project using Web Services, WSDL, UDDI, and SOAP to communicate with other
+                        systems by using Apache Axis and involved in Micro Services development.</li>
+                      <li>Designed the front-end applications using web technologies like React JS, Angular 8 and
+                        used Twitter Bootstrap for creating grid layout, responsive screen sizes and devices.</li>
+                      <li>Developed business components by using Spring Boot, Spring IOC, Spring AOP, Spring
+                        Annotations, Spring Cloud &amp; Persistence layer by using Hibernate/JPA along with Web
+                        Services (RESTful).</li>
+                      <li>Created Typescript reusable components and services to consume REST API's using Component
+                        based architecture provided by angular v10.</li>
+                      <li>Implemented Angular Router to enable navigation from one view to the next as agent
+                        performs application tasks.</li>
+                    </ul>
+                    <p class="cc-exp-tech"><span class="cc-exp-tech-label">Tech Stack</span>Java, J2EE, Spring Boot, JavaScript, DOJO, DAO, Junit, Log4j, Spring
+                      Integration, Hibernate ORM, TDD, Git, Web Services (SOAP), Linux, Agile, Jenkins, Mockito, Maven,
+                      Servlets, Visual studio, Node js, NoSQL, Express JS, HTML5, AWS, Angular v10.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -284,23 +310,27 @@
                     <b>Jr. Java Developer</b>
                   </div>
                   <p class="category" id="attra"><b>Nitha Software Solutions</b></p>
-                  <p>
-                    &rarr;Gathered and analyzed the requirements and converted them into User Requirement Specifications
-                    and Functional Requirement Specifications for the designers and developers to understand them as per
-                    their perspective.<br>
-                    &rarr;Developed HTML prototypes and UI deliverables, such as wireframes, flowcharts, screen
-                    mock-ups, and interface design specifications. <br>
-                    &rarr;Implemented the project as a multi-tier application using Spring boot, Microservices & used
-                    core Spring concepts like AOP, IOC, ORM.
-                    <br>&rarr; Developed several RESTful web services which produces both XML and JSON to perform tasks,
-                    leveraged by both Web Services as well other enterprise wide Webservices.
-                    <br>&rarr;Wrote SPA (Single Page Web Applications) using RESTFUL web services plus Ajax and
-                    AngularJS.
-
-                    <b><br><br>Tech Stack: </b>AngularJS, JSP, Java/J2EE, Spring REST Web services, Spring Boot,
-                    JavaScript, HTML5, CSS3, XML, jQuery, AJAX, Bootstrap, TDD, DOJO, Junit, SVN, Git, GitLab, JIRA,
-                    NPM.
-                  </p>
+                  <a class="cc-exp-toggle" data-toggle="collapse" href="#exp-4" role="button" aria-expanded="false"
+                    aria-controls="exp-4"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                  <div class="collapse" id="exp-4">
+                    <ul class="cc-exp-list">
+                      <li>Gathered and analyzed the requirements and converted them into User Requirement
+                        Specifications and Functional Requirement Specifications for the designers and developers to
+                        understand them as per their perspective.</li>
+                      <li>Developed HTML prototypes and UI deliverables, such as wireframes, flowcharts, screen
+                        mock-ups, and interface design specifications.</li>
+                      <li>Implemented the project as a multi-tier application using Spring boot, Microservices &amp;
+                        used core Spring concepts like AOP, IOC, ORM.</li>
+                      <li>Developed several RESTful web services which produces both XML and JSON to perform tasks,
+                        leveraged by both Web Services as well other enterprise wide Webservices.</li>
+                      <li>Wrote SPA (Single Page Web Applications) using RESTFUL web services plus Ajax and
+                        AngularJS.</li>
+                    </ul>
+                    <p class="cc-exp-tech"><span class="cc-exp-tech-label">Tech Stack</span>AngularJS, JSP, Java/J2EE, Spring REST Web services, Spring Boot,
+                      JavaScript, HTML5, CSS3, XML, jQuery, AJAX, Bootstrap, TDD, DOJO, Junit, SVN, Git, GitLab, JIRA,
+                      NPM.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -310,7 +340,13 @@
         </div>
         <div class="section" id="education">
           <div class="container cc-education">
-            <div class="h4 text-center mb-4 title">Education</div>
+            <div class="cc-exp-heading-row mb-4">
+              <div class="h4 title cc-exp-heading">Education</div>
+              <div class="cc-exp-heading-actions">
+                <button type="button" class="cc-exp-toggle-all" id="edu-toggle-all" data-state="collapsed">Expand
+                  All</button>
+              </div>
+            </div>
             <div class="card">
               <div class="row">
                 <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
@@ -327,8 +363,12 @@
                       <b id="masters">Masters in Computer Science and Technology</b>
                     </div>
                     <p class="category" id="univ">Southern Arkansas University</p>
-                    <p>Currently pursuing my Master's in Computer Science and Engineering at the Southern Arkansas
-                      University. </p>
+                    <a class="cc-exp-toggle" data-toggle="collapse" href="#edu-1" role="button" aria-expanded="false"
+                      aria-controls="edu-1"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                    <div class="collapse" id="edu-1">
+                      <p class="cc-exp-body">Currently pursuing my Master's in Computer Science and Engineering at
+                        the Southern Arkansas University.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -348,14 +388,17 @@
                       <b id="masters">Bachelor's in Computer Science and Technology</b>
                     </div>
                     <p class="category" id="btech"><b>VNR Vignana Jyothi Institute of Engineering and Technology</b></p>
-                    <p>Have completed my Bachelors in Computer Science and Engi with 82%. Courses studied are Data
-                      Structures and Algorithms, Web Development, Operating Systems, Linux, SQL,
-                      Compiler Design, Computer Programming, Database Management Systems, Java Programming, Software
-                      Engineering, Computer Networks, Cyber Security,
-                      Artificial Intelligence and Neural Networks, Big Data Analytics, Information Retrieval Systems.
-                      <br> Apart from the course curriculum, participated in workshops
-                      Online Trainings etc.
-                    </p>
+                    <a class="cc-exp-toggle" data-toggle="collapse" href="#edu-2" role="button" aria-expanded="false"
+                      aria-controls="edu-2"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                    <div class="collapse" id="edu-2">
+                      <p class="cc-exp-body">Have completed my Bachelors in Computer Science and Engi with 82%.
+                        Courses studied are Data Structures and Algorithms, Web Development, Operating Systems,
+                        Linux, SQL, Compiler Design, Computer Programming, Database Management Systems, Java
+                        Programming, Software Engineering, Computer Networks, Cyber Security, Artificial
+                        Intelligence and Neural Networks, Big Data Analytics, Information Retrieval Systems.
+                        <br>Apart from the course curriculum, participated in workshops Online Trainings etc.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -375,7 +418,12 @@
                       <b>Intermediate Education in MPC</b>
                     </div>
                     <p class="category" id="inter">Sri Chaitanya Junior College</p>
-                    <p>Studied Intermediate Education in the area of Maths, Physics and Chemistry with 97.6%.</p>
+                    <a class="cc-exp-toggle" data-toggle="collapse" href="#edu-3" role="button" aria-expanded="false"
+                      aria-controls="edu-3"><b>Details</b> <i class="fa fa-chevron-down"></i></a>
+                    <div class="collapse" id="edu-3">
+                      <p class="cc-exp-body">Studied Intermediate Education in the area of Maths, Physics and
+                        Chemistry with 97.6%.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -757,11 +805,16 @@
                     <div class="row">
                       <div class="col-lg-2 col-md-3 cc-reference-header"><a href="#"><img src="images/rising_star.png"
                             id="awards" alt="Image" /></a>
-                        <p class="category" id="rising">Associated to Attra Infotech</p>
+                        <p class="category" id="award">Associated to Attra Infotech</p>
                       </div>
                       <div class="col-lg-10 col-md-9">
-                        <h4 id="rising"><b>Rising Star Award</b></h4>
-                        <p> Awarded for the best performance associated to Attra. </p>
+                        <h4><b>Rising Star Award</b></h4>
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#award-1" role="button"
+                          aria-expanded="false" aria-controls="award-1"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="award-1">
+                          <p class="cc-exp-body">Awarded for the best performance associated to Attra.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -773,12 +826,23 @@
                         <p class="category" id="award">Associated to Vanguard Inc.</p>
                       </div>
                       <div class="col-lg-10 col-md-9">
-                        <h4 id="rising"><b>Best Performer award.</b></h4>
-                        <p> Awarded for the best performance associated to Vanguard Inc. </p>
+                        <h4><b>Best Performer award.</b></h4>
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#award-2" role="button"
+                          aria-expanded="false" aria-controls="award-2"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="award-2">
+                          <p class="cc-exp-body">Awarded for the best performance associated to Vanguard Inc.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <a class="carousel-control-prev cc-carousel-arrow" href="#cc-Indicators" role="button"
+                  data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span></a>
+                <a class="carousel-control-next cc-carousel-arrow" href="#cc-Indicators" role="button"
+                  data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span></a>
               </div>
             </div>
 
@@ -804,9 +868,14 @@
                       </div>
                       <div class="col-lg-10 col-md-9">
                         <h4><b>AWS Certified Developer - Associate</b></h4>
-                        <p> Associate showcases knowledge and understanding of core AWS services, uses, and basic AWS
-                          architecture best practices, and proficiency in developing, deploying, and debugging
-                          cloud-based applications by using AWS.
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#training-1" role="button"
+                          aria-expanded="false" aria-controls="training-1"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="training-1">
+                          <p class="cc-exp-body">Associate showcases knowledge and understanding of core AWS
+                            services, uses, and basic AWS architecture best practices, and proficiency in
+                            developing, deploying, and debugging cloud-based applications by using AWS.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -818,8 +887,13 @@
                       </div>
                       <div class="col-lg-10 col-md-9">
                         <h4><b>Data Structures and Algorithms using Python</b></h4>
-                        <p>Exposed to programming, analysis of Algorithms, use of
-                          Data Structures using Python.</p>
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#training-2" role="button"
+                          aria-expanded="false" aria-controls="training-2"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="training-2">
+                          <p class="cc-exp-body">Exposed to programming, analysis of Algorithms, use of Data
+                            Structures using Python.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -831,8 +905,13 @@
                         <p class="category" id="award">Associated to Attra Infotech</p>
                       </div>
                       <div class="col-lg-10 col-md-9">
-                        <h4 id=""><b>VisionPLUS and Mainframes Certification</b></h4>
-                        <p>Undergone training in Mainframe Technologies. </p>
+                        <h4><b>VisionPLUS and Mainframes Certification</b></h4>
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#training-3" role="button"
+                          aria-expanded="false" aria-controls="training-3"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="training-3">
+                          <p class="cc-exp-body">Undergone training in Mainframe Technologies.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -844,12 +923,23 @@
                         <p class="category" id="award">Associated to Ingenious Solutions</p>
                       </div>
                       <div class="col-lg-10 col-md-9">
-                        <h4 id=""><b>Training in Bigdata - Hadoop</b></h4>
-                        <p>Undergone training in Bigdata - Hadoop Technologies. </p>
+                        <h4><b>Training in Bigdata - Hadoop</b></h4>
+                        <a class="cc-exp-toggle" data-toggle="collapse" href="#training-4" role="button"
+                          aria-expanded="false" aria-controls="training-4"><b>Details</b> <i
+                            class="fa fa-chevron-down"></i></a>
+                        <div class="collapse" id="training-4">
+                          <p class="cc-exp-body">Undergone training in Bigdata - Hadoop Technologies.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <a class="carousel-control-prev cc-carousel-arrow" href="#cc-Indicators1" role="button"
+                  data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span></a>
+                <a class="carousel-control-next cc-carousel-arrow" href="#cc-Indicators1" role="button"
+                  data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span></a>
               </div>
             </div>
 
@@ -871,7 +961,7 @@
                             <!--<form action="https://formspree.io/enimidigandlasaiteja@email.com" method="POST">
                       <form action="https://formspree.io/f/xqkngzjr" method="POST">-->
                             <form name="contact-form" action="https://submit-form.com/AUXghOI2" method="POST">
-                              <div class="p pb-3"><strong>Please Feel free to contact me </strong></div>
+                              <div class="p pb-3"><strong>Please feel free to contact me</strong></div>
                               <div class="row mb-3">
                                 <div class="col">
                                   <div class="input-group"><span class="input-group-addon"><i
@@ -955,12 +1045,30 @@
         <p><br>Thanks <br><a class="credit" href="#">Saiteja</a></p>
       </div>
     </footer>
+
+    <div class="modal fade" id="birthdayModal" tabindex="-1" role="dialog" aria-labelledby="birthdayModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered cc-birthday-dialog" role="document">
+        <div class="modal-content cc-birthday-modal">
+          <div class="modal-body text-center">
+            <button type="button" class="close cc-birthday-close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <div class="cc-birthday-emoji" id="specialDayEmoji">🎉🎂🎉</div>
+            <h1 id="specialDayTitle">It's My Birthday!</h1>
+            <p id="specialDayMessage">Today is Saiteja's birthday! Thanks for stopping by my resume &mdash; feel
+              free to look around, and if you'd like to say hi, head over to the <a href="#contact"
+                data-dismiss="modal" class="cc-birthday-link">Contact</a> section.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
     <script src="js/core/popper.min.js?ver=1.1.0"></script>
     <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
     <script src="js/now-ui-kit.js?ver=1.1.0"></script>
     <script src="js/aos.js?ver=1.1.0"></script>
-    <script src="scripts/main.js?ver=1.1.0"></script>
+    <script src="scripts/main.js?ver=1.1.6"></script>
     <script src='https://siteseal.certerassl.com/validate/dynamic/sealvalidation/eTqicVNgpYY=/0'></script>
 </body>
 

@@ -5260,22 +5260,45 @@ a.credit {
 
 /* Common Style */
 .section {
+  padding-top: 35px;
   padding-bottom: 0; }
+
+/* The hero's icon row reuses .section purely as a layout wrapper (not a real page section).
+   It used to rely on margin-top:-106px collapsing through an empty flow box to land in place,
+   which left an unclaimed strip of raw background image between the icons and the header's
+   bottom edge (showing as a flat black band wherever that slice of the map has no linework).
+   Anchor it directly to the header's bottom edge instead, so there's no leftover gap. */
+.page-header {
+  z-index: 1; }
+
+.page-header .section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -29px;
+  padding: 0;
+  background: transparent; }
+
+.page-header .button-container {
+  margin-top: 0; }
+
+/* bg_image4.jpg is a small map graphic on a mostly-black canvas; a shorter hero crops tighter to
+   it (less black letterboxing) and needs less space for the profile content anyway */
+.page-header.page-header-small {
+  min-height: 560px; }
 
 
 
   /******************Customization code *********************************/
 
   /* Style the rainbow text element. */
+#rainbow-text {
+  transition: color 0.3s ease;
+}
 #rainbow-text:hover {
-  font-size: 40px;
 	background: linear-gradient(to right, red, orange, yellow, green, cyan, violet,red);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font: {
-		size: 20vw;
-		family: $font;
-  }
 }
 
 #masters{
@@ -5370,13 +5393,18 @@ a.credit {
 		
 }
 .tech_bg-primary {
-  background-color: black !important; 
-  color:black;
+  background: linear-gradient(135deg, #1f2937, #374151) !important;
+  color: white;
   }
  
 .attra_bg-primary {
-  background-color: #00D7D7 !important; 
-  color:black;
+  background: linear-gradient(135deg, #1f2937, #374151) !important;
+  color: white;
+  }
+
+.cc-education .bg-primary {
+  background: linear-gradient(135deg, #1f2937, #374151) !important;
+  color: white;
   }
   
 
@@ -5389,16 +5417,6 @@ a.credit {
 	
   }
   
-  #rising{
-    background: linear-gradient(to right, red, orange, yellow, green, cyan, violet,red);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font: {
-		size: 20vw;
-		family: $font;
-  }
-
-  }
 #awards{
   background-color: none;
   border: none;
@@ -5417,4 +5435,400 @@ a.credit {
 #award{
   font-size: smaller;
   color: grey;
+}
+
+/* Card polish: softer corners + a subtle lift on hover */
+.card,
+.tech_card {
+  border-radius: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.tech_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.18);
+}
+
+/* Work experience heading row: title + expand/collapse-all controls */
+.cc-exp-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cc-exp-heading {
+  margin-bottom: 0;
+}
+
+.cc-exp-heading-actions {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.cc-exp-toggle-all {
+  background: transparent;
+  border: 1px solid #3366ff;
+  color: #3366ff;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cc-exp-toggle-all:hover,
+.cc-exp-toggle-all:active {
+  background: #3366ff;
+  color: #FFFFFF;
+}
+
+.cc-exp-toggle-all:focus {
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .cc-exp-heading-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cc-exp-heading-actions {
+    position: static;
+  }
+}
+
+/* Work experience accordion: Tech Stack toggle stays visible, only its body collapses */
+.cc-exp-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #3366ff;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.cc-exp-toggle:hover,
+.cc-exp-toggle:focus {
+  color: #1f4fd1;
+  text-decoration: none;
+}
+
+.cc-exp-toggle .fa-chevron-down {
+  font-size: 0.75em;
+  transition: transform 0.25s ease;
+}
+
+.cc-exp-toggle[aria-expanded="true"] .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.cc-exp-body {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #5a5a5a;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.cc-exp-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding-left: 0;
+}
+
+.cc-exp-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 11px;
+  color: #5a5a5a;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.cc-exp-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cc-exp-list li::before {
+  content: "\f105";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: #3366ff;
+  font-weight: 700;
+}
+
+.cc-exp-tech {
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-top: 14px;
+  border-top: 1px solid #e6e6e6;
+  color: #5a5a5a;
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+
+.cc-exp-tech-label {
+  display: inline-block;
+  color: #3366ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  margin-right: 8px;
+}
+
+/* Primary buttons: blue accent matching the .category color used throughout the resume */
+.btn-primary {
+  background: linear-gradient(135deg, #3366ff, #1f4fd1) !important;
+  border-color: transparent !important;
+  color: #FFFFFF !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: linear-gradient(135deg, #4d7aff, #3366ff) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hero social icon buttons: the framework centers icons with a fixed -12px transform tuned for
+   the default btn-icon size, which misaligns on btn-lg (our size here). Use flexbox instead so the
+   icon is always dead-center regardless of size. */
+.button-container .btn.btn-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.button-container .btn.btn-icon i.fa {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  line-height: 1 !important;
+}
+
+/* Hero buttons (Contact Me / View My CV): outline style over the header photo, fills in on hover */
+.btn-hero {
+  background: transparent !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+  border-radius: 30px !important;
+  box-shadow: none !important;
+}
+
+.btn-hero:hover,
+.btn-hero:focus,
+.btn-hero:active {
+  background: #3366ff !important;
+  border-color: #3366ff !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Achievements/Trainings carousels: compact prev/next buttons instead of the default full-height overlay */
+.cc-reference .carousel {
+  padding: 0 34px;
+}
+
+.cc-carousel-arrow {
+  top: 50%;
+  bottom: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #000000;
+  color: #000000 !important;
+  opacity: 0.85;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.cc-carousel-arrow.carousel-control-prev {
+  left: 4px;
+}
+
+.cc-carousel-arrow.carousel-control-next {
+  right: 4px;
+}
+
+.cc-carousel-arrow:hover,
+.cc-carousel-arrow:focus {
+  background: #000000;
+  color: #FFFFFF !important;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.cc-carousel-arrow .fa {
+  font-size: 0.9em;
+}
+
+@media (max-width: 767px) {
+  .cc-reference .carousel {
+    padding: 0 30px;
+  }
+}
+
+/* Birthday popup */
+.cc-birthday-dialog {
+  width: 70vw;
+  max-width: 70vw;
+  height: 70vh;
+  margin: 15vh auto;
+}
+
+.cc-birthday-modal {
+  height: 100%;
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3366ff, #1f4fd1);
+  color: #FFFFFF;
+}
+
+.cc-birthday-modal .modal-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.cc-birthday-modal h1 {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 3.5em;
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.cc-birthday-modal p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.3em;
+  width: 100%;
+  max-width: 700px;
+  line-height: 1.6;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.cc-birthday-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cc-birthday-link:hover,
+.cc-birthday-link:focus {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.cc-birthday-emoji {
+  font-size: 5em;
+  margin-bottom: 16px;
+}
+
+.cc-birthday-close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  color: #FFFFFF;
+  opacity: 0.8;
+  font-size: 2em;
+  text-shadow: none;
+  z-index: 2;
+}
+
+.cc-birthday-close:hover {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .cc-birthday-dialog {
+    width: 90vw;
+    max-width: 90vw;
+    height: 70vh;
+    margin: 15vh auto;
+  }
+  .cc-birthday-modal .modal-body {
+    padding: 20px;
+  }
+  .cc-birthday-emoji {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .cc-birthday-modal h1 {
+    font-size: 2.1em;
+    margin-bottom: 14px;
+  }
+  .cc-birthday-modal p {
+    font-size: 1.2em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .cc-birthday-close {
+    top: 10px;
+    right: 14px;
+    font-size: 1.5em;
+  }
+}
+
+/* Navbar: neutralize the framework's green bg-primary once solid (after scroll), match the slate card theme */
+.navbar.bg-primary {
+  background: #000000 !important;
+}
+
+/* Navbar: floating rounded pill instead of a flush square bar */
+.navbar.fixed-top {
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  width: auto;
+  border-radius: 50px;
+  transition: top 0.3s ease, border-radius 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.navbar-transparent {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar.bg-primary {
+  border-radius: 50px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 991px) {
+  .navbar.fixed-top {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 24px;
+  }
 }
